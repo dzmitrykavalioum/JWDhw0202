@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Kettle implements Serializable {
     private static int id = 0;
     private int uid;
+    private int categoryId = 1;
     private String producer;
     private int power;
     private int capacity;
@@ -57,8 +58,8 @@ public class Kettle implements Serializable {
         this.price = price;
     }
 
-    public static int getId() {
-        return id;
+    public int getId() {
+        return uid;
     }
 
     @Override

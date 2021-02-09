@@ -6,6 +6,7 @@ import java.io.Serializable;
 public class Oven implements Serializable {
     private static int id = 0;
     private int uid;
+    private int categoryId = 3;
     private int powerConsumption;
     private double weight;
     private int capacity;
@@ -91,6 +92,7 @@ public class Oven implements Serializable {
         this.price = price;
     }
 
+    
 
     //Oven : POWER_CONSUMPTION=1000, WEIGHT=10, CAPACITY=32, DEPTH=60, HEIGHT=45.5, WIDTH=59.5
     @Override
