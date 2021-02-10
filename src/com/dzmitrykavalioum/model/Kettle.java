@@ -58,8 +58,12 @@ public class Kettle implements Serializable {
         this.price = price;
     }
 
-    public int getId() {
+    public int getUid() {
         return uid;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
     @Override

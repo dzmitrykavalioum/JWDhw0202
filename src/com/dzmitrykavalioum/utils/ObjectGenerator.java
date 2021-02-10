@@ -2,7 +2,13 @@ package com.dzmitrykavalioum.utils;
 
 import com.dzmitrykavalioum.model.*;
 
+import java.util.List;
+
 public class ObjectGenerator {
+    public static int categoryMin = 1;
+    public static int uidMin = 0;
+    public static int priceMin = 0;
+
     public static Object getProductFromString(String line, int categoryId) {
         String[] properties;
         switch (categoryId) {
@@ -12,6 +18,7 @@ public class ObjectGenerator {
                         Double.parseDouble(properties[1].split("=")[1]),
                         Double.parseDouble(properties[2].split("=")[1]),
                         Integer.parseInt(properties[3].split("=")[1]));
+                writeMinPrice(kettle.getPrice(), kettle.getCategoryId(), kettle.getUid());
                 return kettle;
 
             case 2:         //laptop
@@ -27,6 +34,7 @@ public class ObjectGenerator {
                         Double.parseDouble(properties[5].split("=")[1]),
                         Integer.parseInt(properties[6].split("=")[1])
                 );
+                writeMinPrice(laptop.getPrice(), laptop.getCategoryId(), laptop.getUid());
                 return laptop;
             case 3:             //oven int powerConsumption, double weight, double capacity, double depth, double height, double width, int price
                 properties = line.split(", ", 7);
@@ -37,6 +45,7 @@ public class ObjectGenerator {
                         Double.parseDouble(properties[4].split("=")[1]),
                         Double.parseDouble(properties[5].split("=")[1]),
                         Integer.parseInt(properties[0].split("=")[1]));
+                writeMinPrice(oven.getPrice(), oven.getCategoryId(), oven.getUid());
                 return oven;
             case 4:             //refrigerator
                 properties = line.split(", ", 7);
@@ -47,6 +56,7 @@ public class ObjectGenerator {
                         Double.parseDouble(properties[4].split("=")[1]),
                         Double.parseDouble(properties[5].split("=")[1]),
                         Integer.parseInt(properties[0].split("=")[1]));
+                writeMinPrice(refrigerator.getPrice(), refrigerator.getCategoryId(), refrigerator.getUid());
                 return refrigerator;
             case 5:             //speakers
                 properties = line.split(", ", 5);
@@ -56,6 +66,7 @@ public class ObjectGenerator {
                         Integer.parseInt(properties[3].split("=")[1]),
                         Integer.parseInt(properties[4].split("=")[1])
                 );
+                writeMinPrice(speakers.getPrice(), speakers.getCategoryId(), speakers.getUid());
                 return speakers;
 
             case 6:             //tabletPC
@@ -67,6 +78,7 @@ public class ObjectGenerator {
                         Integer.parseInt(properties[3].split("=")[1]),
                         properties[4].split("=")[1],
                         Integer.parseInt(properties[5].split("=")[1]));
+                writeMinPrice(tabletPC.getPrice(), tabletPC.getCategoryId(), tabletPC.getUid());
                 return tabletPC;
 
             case 7:             //vacuum cleaner
@@ -80,9 +92,18 @@ public class ObjectGenerator {
                         Integer.parseInt(properties[5].split("=")[1]),
                         Integer.parseInt(properties[6].split("=")[1])
                 );
+                writeMinPrice(vacuumCleaner.getPrice(), vacuumCleaner.getCategoryId(), vacuumCleaner.getUid());
                 return vacuumCleaner;
         }
         return null;
 
+    }
+
+    public static void writeMinPrice(int price, int categoryId, int uid) {
+        if (priceMin == 0 || price <= priceMin) {
+            priceMin = price;
+            categoryMin = categoryId;
+            uidMin = uid;
+        }
     }
 }

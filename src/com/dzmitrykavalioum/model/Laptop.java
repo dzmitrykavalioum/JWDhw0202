@@ -82,8 +82,12 @@ public class Laptop implements Serializable {
         this.displayInches = displayInches;
     }
 
-    public int getId() {
+    public int getUid() {
         return uid;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
     public int getPrice() {
@@ -93,6 +97,7 @@ public class Laptop implements Serializable {
     public void setPrice(int price) {
         this.price = price;
     }
+
 
     @Override
     public String toString() {

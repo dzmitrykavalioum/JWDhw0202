@@ -95,6 +95,10 @@ public class Refrigerator implements Serializable {
         this.price = price;
     }
 
+    public int getCategoryId() {
+        return categoryId;
+    }
+
     @Override
     public String toString() {
         return "Refrigerator \tpower consuption: " + powerConsumption +

@@ -25,6 +25,9 @@ public class Speakers implements Serializable {
         this.frequencyRange = frequencyRange;
         this.cordLength = cordLength;
         this.price = price;
+        uid = id;
+        id++;
+
     }
 
     public int getPowerConsumption() {
@@ -69,6 +72,10 @@ public class Speakers implements Serializable {
 
     public int getUid() {
         return uid;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
     @Override

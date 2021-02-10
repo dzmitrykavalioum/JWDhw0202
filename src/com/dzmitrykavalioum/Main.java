@@ -42,8 +42,8 @@ public class Main {
         }
 
 
-        showAllQty();
-        showAllInformation();
+        showAllKettles();
+        System.out.println(getCheapestProduct());
 
 
     }
@@ -88,7 +88,7 @@ public class Main {
         }
     }
 
-    private static void showAllKettles(){
+    private static void showAllKettles() {
         for (Kettle item : kettles
         ) {
             System.out.println(item);
@@ -118,16 +118,16 @@ public class Main {
         ) {
             System.out.println(item);
         }
-        for (TabletPC item : tablets){
+        for (TabletPC item : tablets) {
             System.out.println(item);
         }
 
-        for (VacuumCleaner item:vacuumCleaners){
+        for (VacuumCleaner item : vacuumCleaners) {
             System.out.println(item);
         }
     }
 
-    public static void showAllQty(){
+    public static void showAllQty() {
         System.out.println(kettles.size() + " Kettles");
         System.out.println(laptops.size() + " Laptops");
         System.out.println(ovens.size() + " Ovens");
@@ -135,5 +135,26 @@ public class Main {
         System.out.println(speakers.size() + " Speakers");
         System.out.println(tablets.size() + " Tablets");
         System.out.println(vacuumCleaners.size() + " Vacuum Cleaners");
+    }
+
+    public static Object getCheapestProduct() {
+        int categoryMin = ObjectGenerator.categoryMin;
+        switch (categoryMin) {
+            case 1:
+                return kettles.get(ObjectGenerator.uidMin);
+            case 2:
+                return laptops.get(ObjectGenerator.uidMin);
+            case 3:
+                return ovens.get(ObjectGenerator.uidMin);
+            case 4:
+                return refrigerators.get(ObjectGenerator.uidMin);
+            case 5:
+                return speakers.get(ObjectGenerator.uidMin);
+            case 6:
+                return tablets.get(ObjectGenerator.uidMin);
+            case 7:
+                return vacuumCleaners.get(ObjectGenerator.uidMin);
+        }
+        return null;
     }
 }

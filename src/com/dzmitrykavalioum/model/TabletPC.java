@@ -14,6 +14,7 @@ public class TabletPC implements Serializable {
     private String color;
     private int price;
 
+
     public TabletPC() {
         uid = id;
         id++;
@@ -81,6 +82,10 @@ public class TabletPC implements Serializable {
 
     public int getUid() {
         return uid;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
     @Override

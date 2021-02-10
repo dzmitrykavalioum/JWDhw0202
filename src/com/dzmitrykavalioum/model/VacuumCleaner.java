@@ -90,8 +90,12 @@ public class VacuumCleaner implements Serializable {
         this.price = price;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public int getUid() {
+        return uid;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
     @Override

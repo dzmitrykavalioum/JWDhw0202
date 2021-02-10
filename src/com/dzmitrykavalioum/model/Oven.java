@@ -92,13 +92,15 @@ public class Oven implements Serializable {
         this.price = price;
     }
 
-
+    public int getCategoryId() {
+        return categoryId;
+    }
 
     //Oven : POWER_CONSUMPTION=1000, WEIGHT=10, CAPACITY=32, DEPTH=60, HEIGHT=45.5, WIDTH=59.5
     @Override
     public String toString() {
-        return uid + ". Oven : POWER_CONSUMPTION=" + powerConsumption + ", WEIGHT=" + weight +
-                ", CAPACITY=" + capacity + ", DEPTH=" + depth + ", HEIGHT=" + height +
-                ", WIDTH=" + width + ", PRICE=" + price;
+        return  "Oven \t power consumption: " + powerConsumption + "\tweight: " + weight +
+                "\tcapacity: " + capacity + "\tdepth: " + depth + "\theight: " + height +
+                "\twidth: " + width + "\tprice: " + price;
     }
 }
