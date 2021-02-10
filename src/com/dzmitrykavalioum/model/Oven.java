@@ -9,10 +9,10 @@ public class Oven implements Serializable {
     private int categoryId = 3;
     private int powerConsumption;
     private double weight;
-    private int capacity;
-    private int depth;
+    private double capacity;
+    private double depth;
     private double height;
-    private int width;
+    private double width;
     private int price;
 
     public Oven() {
@@ -20,7 +20,7 @@ public class Oven implements Serializable {
         id++;
     }
 
-    public Oven(int powerConsumption, double weight, int capacity, int depth, double height, int width, int price) {
+    public Oven(int powerConsumption, double weight, double capacity, double depth, double height, double width, int price) {
         this.powerConsumption = powerConsumption;
         this.weight = weight;
         this.capacity = capacity;
@@ -48,19 +48,19 @@ public class Oven implements Serializable {
         this.weight = weight;
     }
 
-    public int getCapacity() {
+    public double getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(double capacity) {
         this.capacity = capacity;
     }
 
-    public int getDepth() {
+    public double getDepth() {
         return depth;
     }
 
-    public void setDepth(int depth) {
+    public void setDepth(double depth) {
         this.depth = depth;
     }
 
@@ -72,11 +72,11 @@ public class Oven implements Serializable {
         this.height = height;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
 

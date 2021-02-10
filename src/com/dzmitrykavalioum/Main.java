@@ -42,9 +42,8 @@ public class Main {
         }
 
 
-        System.out.println(kettles.size() + " Kettles");
-        System.out.println(laptops.size() + " Laptops");
-        getAllInformation();
+        showAllQty();
+        showAllInformation();
 
 
     }
@@ -89,11 +88,52 @@ public class Main {
         }
     }
 
-    public static void getAllInformation() {
+    private static void showAllKettles(){
         for (Kettle item : kettles
         ) {
             System.out.println(item);
-
         }
+    }
+
+    public static void showAllInformation() {
+        for (Kettle item : kettles
+        ) {
+            System.out.println(item);
+        }
+        for (Laptop item : laptops
+        ) {
+            System.out.println(item);
+        }
+        for (Oven item : ovens
+        ) {
+            System.out.println(item);
+        }
+
+        for (Refrigerator item : refrigerators
+        ) {
+            System.out.println(item);
+        }
+
+        for (Speakers item : speakers
+        ) {
+            System.out.println(item);
+        }
+        for (TabletPC item : tablets){
+            System.out.println(item);
+        }
+
+        for (VacuumCleaner item:vacuumCleaners){
+            System.out.println(item);
+        }
+    }
+
+    public static void showAllQty(){
+        System.out.println(kettles.size() + " Kettles");
+        System.out.println(laptops.size() + " Laptops");
+        System.out.println(ovens.size() + " Ovens");
+        System.out.println(refrigerators.size() + " Refrigerators");
+        System.out.println(speakers.size() + " Speakers");
+        System.out.println(tablets.size() + " Tablets");
+        System.out.println(vacuumCleaners.size() + " Vacuum Cleaners");
     }
 }

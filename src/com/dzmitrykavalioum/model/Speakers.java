@@ -18,9 +18,8 @@ public class Speakers implements Serializable {
         id++;
     }
 
-    public Speakers(int categoryId, int powerConsumption, int numberOfSpeakers,
+    public Speakers(int powerConsumption, int numberOfSpeakers,
                     String frequencyRange, int cordLength, int price) {
-        this.categoryId = categoryId;
         this.powerConsumption = powerConsumption;
         this.numberOfSpeakers = numberOfSpeakers;
         this.frequencyRange = frequencyRange;

@@ -8,11 +8,11 @@ public class Refrigerator implements Serializable {
     private int uid;
     private int categoryId = 4;
     private int powerConsumption;
-    private int weight;
-    private int height;
-    private int width;
-    private int freezerCapacity;
-    private int overallCapacity;
+    private double weight;
+    private double height;
+    private double width;
+    private double freezerCapacity;
+    private double overallCapacity;
     private int price;
 
     public Refrigerator() {
@@ -21,8 +21,8 @@ public class Refrigerator implements Serializable {
     }
 
     public Refrigerator(int powerConsumption,
-                        int weight, int freezerCapacity,
-                        int overallCapacity, int height, int width, int price) {
+                        double weight, double freezerCapacity,
+                        double overallCapacity, double height, double width, int price) {
         this.powerConsumption = powerConsumption;
         this.weight = weight;
         this.height = height;
@@ -43,12 +43,48 @@ public class Refrigerator implements Serializable {
     }
 
 
-    public int getFreezerCapacity() {
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getFreezerCapacity() {
         return freezerCapacity;
     }
 
-    public void setFreezerCapacity(int freezerCapacity) {
+    public void setFreezerCapacity(double freezerCapacity) {
         this.freezerCapacity = freezerCapacity;
+    }
+
+    public double getOverallCapacity() {
+        return overallCapacity;
+    }
+
+    public void setOverallCapacity(double overallCapacity) {
+        this.overallCapacity = overallCapacity;
+    }
+
+    public int getUid() {
+        return uid;
     }
 
     public int getPrice() {
@@ -57,42 +93,6 @@ public class Refrigerator implements Serializable {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getOverallCapacity() {
-        return overallCapacity;
-    }
-
-    public void setOverallCapacity(int overallCapacity) {
-        this.overallCapacity = overallCapacity;
-    }
-
-    public int getUid() {
-        return uid;
     }
 
     @Override
