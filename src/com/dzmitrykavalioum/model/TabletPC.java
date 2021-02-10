@@ -5,18 +5,29 @@ import java.io.Serializable;
 //TabletPC : BATTERY_CAPACITY=3, DISPLAY_INCHES=14, MEMORY_ROM=8000, FLASH_MEMORY_CAPACITY=2, COLOR=blue
 public class TabletPC implements Serializable {
     private static int id = 0;
+    private int uid;
+    private int categoryId = 6;
     private int batteryCapacity;
     private double displayInches;
     private int memoryRom;
     private int flashMemoryCapacity;
     private String color;
+    private int price;
 
-    public TabletPC(int batteryCapacity, double displayInches, int memoryRom, int flashMemoryCapacity, String color) {
+    public TabletPC() {
+        uid = id;
+        id++;
+    }
+
+    public TabletPC(int batteryCapacity, double displayInches, int memoryRom, int flashMemoryCapacity,
+                    String color, int price) {
         this.batteryCapacity = batteryCapacity;
         this.displayInches = displayInches;
         this.memoryRom = memoryRom;
         this.flashMemoryCapacity = flashMemoryCapacity;
         this.color = color;
+        this.price = price;
+        uid = id;
         id++;
     }
 
@@ -60,7 +71,22 @@ public class TabletPC implements Serializable {
         this.color = color;
     }
 
-    public static int getId() {
-        return id;
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    @Override
+    public String toString() {
+        return "Laptop \t battery capacity: "+  batteryCapacity + "\tdisplay inches: " + displayInches +
+        "\tmemory rom: " + memoryRom + "\tflash memory capacity: " + flashMemoryCapacity +
+        "\tcolor: " + color + "\tprice: " + price;
     }
 }

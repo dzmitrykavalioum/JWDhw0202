@@ -5,6 +5,8 @@ import java.io.Serializable;
 public class VacuumCleaner implements Serializable {
     //VacuumCleaner : POWER_CONSUMPTION=100, FILTER_TYPE=A, BAG_TYPE=A2, WAND_TYPE=all-in-one, MOTOR_SPEED_REGULATION=3000, CLEANING_WIDTH=20
     private static int id = 0;
+    private int uid;
+    private int categoryId = 7;
     private int powerConsumption = 100;
     private String filterType;
     private String bagType;
@@ -14,6 +16,8 @@ public class VacuumCleaner implements Serializable {
     private int price;
 
     public VacuumCleaner() {
+        uid = id;
+        id++;
     }
 
     public VacuumCleaner(int powerConsumption, String filterType,
@@ -26,6 +30,7 @@ public class VacuumCleaner implements Serializable {
         this.motorSpeedRegulation = motorSpeedRegulation;
         this.cleaningWidth = cleaningWidth;
         this.price = price;
+        uid = id;
         id++;
     }
 
@@ -85,13 +90,14 @@ public class VacuumCleaner implements Serializable {
         this.price = price;
     }
 
-    public static int getId() {
-        return id;
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     @Override
     public String toString() {
-        return getClass().getName().toString() + " power consumption- " +
-                powerConsumption + "\t price- " + price;
+        return "Vacuum cleaner \t power consumption: " + powerConsumption + "\tfilter type: " + filterType +
+                "\tbag type: " + bagType + "\twand type: " + wandType + "\tmotor speed regulation: " +
+                motorSpeedRegulation + "\tcleaning width: " + cleaningWidth + "\t price- " + price;
     }
 }

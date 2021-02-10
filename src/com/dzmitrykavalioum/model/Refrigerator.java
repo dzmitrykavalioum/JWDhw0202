@@ -5,7 +5,8 @@ import java.io.Serializable;
 //POWER_CONSUMPTION=100, WEIGHT=20, FREEZER_CAPACITY=10, OVERALL_CAPACITY=300, HEIGHT=200, WIDTH=70
 public class Refrigerator implements Serializable {
     private static int id = 0;
-    private String producer;
+    private int uid;
+    private int categoryId = 4;
     private int powerConsumption;
     private int weight;
     private int height;
@@ -14,10 +15,14 @@ public class Refrigerator implements Serializable {
     private int overallCapacity;
     private int price;
 
-    public Refrigerator(String producer, int powerConsumption,
-                        int weight, int height, int width, int freezerCapacity,
-                        int overallCapacity, int price) {
-        this.producer = producer;
+    public Refrigerator() {
+        uid = id;
+        id++;
+    }
+
+    public Refrigerator(int powerConsumption,
+                        int weight, int freezerCapacity,
+                        int overallCapacity, int height, int width, int price) {
         this.powerConsumption = powerConsumption;
         this.weight = weight;
         this.height = height;
@@ -25,17 +30,11 @@ public class Refrigerator implements Serializable {
         this.freezerCapacity = freezerCapacity;
         this.overallCapacity = overallCapacity;
         this.price = price;
+        uid = id;
+        id++;
     }
 
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
-    public int getPowerConsumption() {
+     public int getPowerConsumption() {
         return powerConsumption;
     }
 
@@ -90,5 +89,17 @@ public class Refrigerator implements Serializable {
 
     public void setOverallCapacity(int overallCapacity) {
         this.overallCapacity = overallCapacity;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    @Override
+    public String toString() {
+        return "Refrigerator \tpower consuption: " + powerConsumption +
+        "\tweight: " + weight + "\tfreezer capacity: " + freezerCapacity+
+        "\toverall capacity: " + overallCapacity + "\theight: " + height +
+        "\twidth: " + width + "\tprice: " + price;
     }
 }

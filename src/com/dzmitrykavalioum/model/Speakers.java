@@ -5,23 +5,27 @@ import java.io.Serializable;
 //Speakers : POWER_CONSUMPTION=15, NUMBER_OF_SPEAKERS=2, FREQUENCY_RANGE=2-4, CORD_LENGTH=2
 public class Speakers implements Serializable {
     private static int id = 0;
+    private int uid;
+    private int categoryId = 5;
     private int powerConsumption;
     private int numberOfSpeakers;
-    private int frequencyMin;
-    private int frequencyMax;
+    private String frequencyRange;
     private int cordLength;
+    private int price;
 
     public Speakers() {
+        uid = id;
         id++;
     }
 
-    public Speakers(int powerConsumption, int numberOfSpeakers, int frequencyMin, int frequencyMax, int cordLength) {
+    public Speakers(int categoryId, int powerConsumption, int numberOfSpeakers,
+                    String frequencyRange, int cordLength, int price) {
+        this.categoryId = categoryId;
         this.powerConsumption = powerConsumption;
         this.numberOfSpeakers = numberOfSpeakers;
-        this.frequencyMin = frequencyMin;
-        this.frequencyMax = frequencyMax;
+        this.frequencyRange = frequencyRange;
         this.cordLength = cordLength;
-        id++;
+        this.price = price;
     }
 
     public int getPowerConsumption() {
@@ -40,20 +44,12 @@ public class Speakers implements Serializable {
         this.numberOfSpeakers = numberOfSpeakers;
     }
 
-    public int getFrequencyMin() {
-        return frequencyMin;
+    public String getFrequencyRange() {
+        return frequencyRange;
     }
 
-    public void setFrequencyMin(int frequencyMin) {
-        this.frequencyMin = frequencyMin;
-    }
-
-    public int getFrequencyMax() {
-        return frequencyMax;
-    }
-
-    public void setFrequencyMax(int frequencyMax) {
-        this.frequencyMax = frequencyMax;
+    public void setFrequencyRange(String frequencyRange) {
+        this.frequencyRange = frequencyRange;
     }
 
     public int getCordLength() {
@@ -64,7 +60,21 @@ public class Speakers implements Serializable {
         this.cordLength = cordLength;
     }
 
-    public static int getId() {
-        return id;
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    @Override
+    public String toString() {
+        return "Speakers \t power consuption: " + powerConsumption + "\tnumber of speakers: " + numberOfSpeakers +
+                "\tfrequenct range: " + frequencyRange + "\tcord length" + cordLength + "\tprice: " + price;
     }
 }
