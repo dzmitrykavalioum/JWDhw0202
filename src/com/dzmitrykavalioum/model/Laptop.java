@@ -7,7 +7,7 @@ public class Laptop implements Serializable {
     private static int id = 0;
     private int uid;
     private int categoryId = 2;
-    private int batteryCapacity;
+    private double batteryCapacity;
     private String os;
     private int memoryRom;
     private int systemMemory;
@@ -20,7 +20,7 @@ public class Laptop implements Serializable {
         id++;
     }
 
-    public Laptop(int batteryCapacity, String os,
+    public Laptop(double batteryCapacity, String os,
                   int memoryRom, int systemMemory,
                   double cpu, double displayInches, int price) {
         this.batteryCapacity = batteryCapacity;
@@ -34,11 +34,11 @@ public class Laptop implements Serializable {
         id++;
     }
 
-    public int getBatteryCapacity() {
+    public double getBatteryCapacity() {
         return batteryCapacity;
     }
 
-    public void setBatteryCapacity(int batteryCapacity) {
+    public void setBatteryCapacity(double batteryCapacity) {
         this.batteryCapacity = batteryCapacity;
     }
 

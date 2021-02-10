@@ -7,8 +7,8 @@ public class Kettle implements Serializable {
     private int uid;
     private int categoryId = 1;
     private String producer;
-    private int power;
-    private int capacity;
+    private double power;
+    private double capacity;
     private int price;
 
     public Kettle() {
@@ -16,7 +16,7 @@ public class Kettle implements Serializable {
         id++;
     }
 
-    public Kettle(String producer, int power, int capacity, int price) {
+    public Kettle(String producer, double power, double capacity, int price) {
 
         this.producer = producer;
         this.power = power;
@@ -34,19 +34,19 @@ public class Kettle implements Serializable {
         this.producer = producer;
     }
 
-    public int getPower() {
+    public double getPower() {
         return power;
     }
 
-    public void setPower(int power) {
+    public void setPower(double power) {
         this.power = power;
     }
 
-    public int getCapacity() {
+    public double getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(double capacity) {
         this.capacity = capacity;
     }
 
